@@ -35,11 +35,17 @@ function LoginForm({ error, onSubmit }: LoginFormProps) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Iniciar sesión</h1>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="login-form__header">
+        <span className="login-form__eyebrow">Acceso seguro</span>
+        <h1>Iniciar sesión</h1>
+        <p className="login-form__subtitle">
+          Ingresa al sistema de cuidado y control de laboratorios Don Bosco Sucre.
+        </p>
+      </div>
 
 
-      <div>
+      <div className="login-group">
         <label htmlFor="carnet">Carnet de identidad</label>
 
 
@@ -56,7 +62,7 @@ function LoginForm({ error, onSubmit }: LoginFormProps) {
       </div>
 
 
-      <div>
+      <div className="login-group">
         <label htmlFor="password">Contraseña</label>
 
 
@@ -74,13 +80,17 @@ function LoginForm({ error, onSubmit }: LoginFormProps) {
 
 
       {error && (
-        <p role="alert" aria-live="polite">
+        <p className="login-error" role="alert" aria-live="polite">
           {error}
         </p>
       )}
 
 
       <button type="submit">Ingresar</button>
+
+      <p className="login-form__footer">
+        Plataforma orientada al registro responsable, seguridad y conservación de los laboratorios.
+      </p>
     </form>
   );
 }
