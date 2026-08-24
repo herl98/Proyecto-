@@ -4,9 +4,9 @@ import { authRepository } from "../repositories/authRepository";
 import "./HomePage.css";
 
 const quickActions = [
-  "Registrar préstamo de equipos",
-  "Revisar materiales disponibles",
-  "Reportar mantenimiento",
+  { id: "equipos", label: "Gestionar equipos" },
+  { id: "incidencia", label: "Reportar incidencia" },
+  { id: "mantenimiento", label: "Programar mantenimiento" },
 ];
 
 const careMetrics = [
@@ -26,7 +26,22 @@ function HomePage() {
 
   return (
     <main className="home-page">
-      <section className="home-hero" aria-label="Panel principal del laboratorio">
+      <header className="home-nav" aria-label="Navegación principal">
+        <a className="home-nav__brand" href="#inicio">
+          <span aria-hidden="true">🔬</span>
+          <span>Laboratorios DBS</span>
+        </a>
+
+        <nav className="home-nav__links" aria-label="Secciones del sistema">
+          <a href="#inicio">Inicio</a>
+          <a href="#equipos">Equipos</a>
+          <a href="#incidencia">Incidencia</a>
+          <a href="#mantenimiento">Mantenimiento</a>
+          <a href="#usuario">Usuario</a>
+        </nav>
+      </header>
+
+      <section className="home-hero" id="inicio" aria-label="Panel principal del laboratorio">
         <div className="home-hero__content">
           <span className="home-hero__badge">Laboratorios Don Bosco Sucre</span>
           <h1>Cuidado de equipos y materiales del colegio</h1>
@@ -36,7 +51,7 @@ function HomePage() {
           </p>
 
           {user ? (
-            <div className="home-hero__user-card" aria-label="Datos de la sesión activa">
+            <div className="home-hero__user-card" id="usuario" aria-label="Datos de la sesión activa">
               <span>Sesión activa</span>
               <strong>{user.name}</strong>
               <small>
@@ -44,7 +59,7 @@ function HomePage() {
               </small>
             </div>
           ) : (
-            <div className="home-hero__user-card home-hero__user-card--empty">
+            <div className="home-hero__user-card home-hero__user-card--empty" id="usuario">
               <span>No existe una sesión activa.</span>
               <button type="button" onClick={() => navigate("/login")}>Iniciar sesión</button>
             </div>
@@ -72,9 +87,9 @@ function HomePage() {
 
         <div className="home-actions">
           {quickActions.map((action) => (
-            <article className="home-action" key={action}>
+            <article className="home-action" id={action.id} key={action.id}>
               <span className="home-action__check">✓</span>
-              <h3>{action}</h3>
+              <h3>{action.label}</h3>
               <p>
                 Mantén un historial claro para preservar los laboratorios y apoyar a docentes y estudiantes.
               </p>
