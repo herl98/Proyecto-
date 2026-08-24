@@ -1,0 +1,45 @@
+/* Base visual shared by every route in the laboratory management application. */
+:root {
+  --app-navy-950: #071527;
+  --app-navy-800: #0f2a44;
+  --app-blue-600: #2563eb;
+  --app-yellow-400: #facc15;
+  --app-slate-50: #f8fafc;
+  --app-slate-300: #cbd5e1;
+}
+
+.app-routes {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--app-navy-950);
+}
+
+.app-routes > * {
+  min-height: 100vh;
+  animation: app-route-enter 0.35s ease-out both;
+}
+
+.app-routes :focus-visible {
+  outline: 3px solid var(--app-yellow-400);
+  outline-offset: 3px;
+}
+
+@keyframes app-route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-routes > * {
+    animation: none;
+  }
+}
