@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { authRepository } from "../repositories/authRepository";
+import AppLayout from "../components/layout/AppLayout";
 import "./HomePage.css";
 
 const quickActions = [
@@ -25,23 +26,9 @@ function HomePage() {
   };
 
   return (
-    <main className="home-page">
-      <aside className="home-nav" aria-label="Navegación principal">
-        <a className="home-nav__brand" href="#inicio">
-          <span aria-hidden="true">🔬</span>
-          <span>Laboratorios DBS</span>
-        </a>
-
-        <nav className="home-nav__links" aria-label="Secciones del sistema">
-          <a href="#inicio">Inicio</a>
-          <a href="#equipos">Equipos</a>
-          <a href="#incidencia">Incidencia</a>
-          <a href="#mantenimiento">Mantenimiento</a>
-          <a href="#usuario">Usuario</a>
-        </nav>
-      </aside>
-
-      <section className="home-hero" id="inicio" aria-label="Panel principal del laboratorio">
+    <AppLayout>
+      <div className="home-page">
+        <section className="home-hero" aria-label="Panel principal del laboratorio">
         <div className="home-hero__content">
           <span className="home-hero__badge">Laboratorios Don Bosco Sucre</span>
           <h1>Cuidado de equipos y materiales del colegio</h1>
@@ -111,8 +98,9 @@ function HomePage() {
             Cerrar sesión
           </button>
         )}
-      </section>
-    </main>
+        </section>
+      </div>
+    </AppLayout>
   );
 }
 

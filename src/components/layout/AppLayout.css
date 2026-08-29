@@ -1,0 +1,13 @@
+.app-layout {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #071527 0%, #0f2a44 48%, #123d5c 100%);
+}
+
+.app-layout__content {
+  min-height: 100vh;
+  margin-left: 248px;
+}
+
+@media (max-width: 760px) {
+  .app-layout__content { margin-left: 0; }
+}
