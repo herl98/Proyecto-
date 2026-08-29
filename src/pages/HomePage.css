@@ -1,6 +1,6 @@
 .home-page {
   min-height: 100vh;
-  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) clamp(15rem, 23vw, 18rem);
+  padding: clamp(1rem, 3vw, 2rem);
   background:
     radial-gradient(circle at 12% 12%, rgba(250, 204, 21, 0.24), transparent 28%),
     radial-gradient(circle at 88% 18%, rgba(59, 130, 246, 0.2), transparent 30%),
@@ -8,66 +8,6 @@
   color: #f8fafc;
 }
 
-.home-nav {
-  position: sticky;
-  z-index: 10;
-  top: 1rem;
-  display: flex;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0.7rem 0.85rem 0.7rem 1.1rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
-  background: rgba(7, 21, 39, 0.78);
-  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.2);
-  backdrop-filter: blur(18px);
-}
-
-.home-nav__brand,
-.home-nav__links a {
-  color: #f8fafc;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.home-nav__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  white-space: nowrap;
-}
-
-.home-nav__brand span:first-child {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 9px;
-  background: rgba(250, 204, 21, 0.16);
-}
-
-.home-nav__links {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.home-nav__links a {
-  padding: 0.55rem 0.7rem;
-  border-radius: 10px;
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.home-nav__links a:hover,
-.home-nav__links a:focus-visible {
-  background: rgba(250, 204, 21, 0.16);
-  color: #fef3c7;
-}
 
 .home-hero {
   display: grid;
@@ -310,39 +250,6 @@
     margin-left: 0;
   }
 
-  .home-nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .home-nav__links {
-    width: 100%;
-    overflow-x: auto;
-  }
-}
-
-  .home-nav {
-    position: sticky;
-    top: 1rem;
-    bottom: auto;
-    left: auto;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.7rem 0.85rem;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .home-nav__links {
-    flex-direction: row;
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .home-nav__brand {
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
 }
 
 @media (max-width: 560px) {

@@ -1,0 +1,15 @@
+.section-page { min-height: 100vh; padding: clamp(1.5rem, 5vw, 4.5rem); color: #f8fafc; }
+.section-page__header { max-width: 760px; }
+.section-page__header > span { color: #fde68a; font-size: .78rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.section-page__header h1 { margin: .65rem 0 0; font-size: clamp(2.3rem, 5vw, 4.4rem); letter-spacing: -.055em; line-height: 1; }
+.section-page__header p { max-width: 650px; color: #cbd5e1; font-size: 1.06rem; line-height: 1.7; }
+.section-page__body { max-width: 1080px; margin-top: 2.5rem; }
+.section-page__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; }
+.section-page__card { padding: 1.25rem; border: 1px solid rgba(148, 163, 184, .24); border-radius: 20px; background: rgba(15, 23, 42, .46); }
+.section-page__card strong, .section-page__card span { display: block; }
+.section-page__card strong { color: #facc15; font-size: 1.45rem; }
+.section-page__card span { margin-top: .45rem; color: #cbd5e1; line-height: 1.5; }
+.section-page__list { display: grid; gap: .8rem; }
+.section-page__list-item { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border-radius: 16px; background: rgba(248,250,252,.1); color: #e2e8f0; }
+.section-page__list-item small { color: #fde68a; font-weight: 700; }
+.section-page__button { padding: .8rem 1rem; border: 0; border-radius: 12px; background: linear-gradient(135deg, #facc15, #f59e0b); color: #111827; font: inherit; font-weight: 800; cursor: pointer; }
