@@ -26,7 +26,7 @@ function HomePage() {
 
   return (
     <main className="home-page">
-      <header className="home-nav" aria-label="Navegación principal">
+      <aside className="home-nav" aria-label="Navegación principal">
         <a className="home-nav__brand" href="#inicio">
           <span aria-hidden="true">🔬</span>
           <span>Laboratorios DBS</span>
@@ -39,7 +39,7 @@ function HomePage() {
           <a href="#mantenimiento">Mantenimiento</a>
           <a href="#usuario">Usuario</a>
         </nav>
-      </header>
+      </aside>
 
       <section className="home-hero" id="inicio" aria-label="Panel principal del laboratorio">
         <div className="home-hero__content">

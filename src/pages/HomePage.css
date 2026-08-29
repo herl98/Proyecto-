@@ -1,6 +1,6 @@
 .home-page {
   min-height: 100vh;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) clamp(15rem, 23vw, 18rem);
   background:
     radial-gradient(circle at 12% 12%, rgba(250, 204, 21, 0.24), transparent 28%),
     radial-gradient(circle at 88% 18%, rgba(59, 130, 246, 0.2), transparent 30%),
@@ -293,6 +293,10 @@
 }
 
 @media (max-width: 860px) {
+  .home-page {
+    padding: 1rem;
+  }
+
   .home-hero,
   .home-actions {
     grid-template-columns: 1fr;
@@ -317,11 +321,31 @@
   }
 }
 
-@media (max-width: 560px) {
-  .home-page {
-    padding: 1rem;
+  .home-nav {
+    position: sticky;
+    top: 1rem;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.7rem 0.85rem;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
+  .home-nav__links {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .home-nav__brand {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 560px) {
   .lab-card--main {
     inset: 1.5rem 0 0;
   }
