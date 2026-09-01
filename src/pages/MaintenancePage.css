@@ -1,0 +1,13 @@
+.maintenance-page__schedule { overflow: hidden; border: 1px solid rgba(148, 163, 184, .24); border-radius: 25px; background: rgba(15, 23, 42, .43); box-shadow: 0 22px 50px rgba(2, 6, 23, .14); }
+.maintenance-page__heading { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 1.4rem clamp(1.25rem, 3vw, 2rem); border-bottom: 1px solid rgba(148, 163, 184, .18); }
+.maintenance-page__heading > div > span { color: #fde68a; font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.maintenance-page__heading h2 { margin: .35rem 0 0; font-size: clamp(1.25rem, 2.5vw, 1.65rem); letter-spacing: -.035em; }
+.maintenance-page__count { padding: .45rem .7rem; border-radius: 999px; background: rgba(250, 204, 21, .14); color: #fde68a; font-size: .8rem; font-weight: 800; white-space: nowrap; }
+.maintenance-page__list { display: grid; }
+.maintenance-page__item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1.2rem clamp(1.25rem, 3vw, 2rem); }
+.maintenance-page__item + .maintenance-page__item { border-top: 1px solid rgba(148, 163, 184, .16); }
+.maintenance-page__item-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 14px; background: rgba(59, 130, 246, .18); color: #bfdbfe; font-size: 1.35rem; font-weight: 900; }
+.maintenance-page__item h3 { margin: 0; color: #f8fafc; font-size: 1rem; }
+.maintenance-page__item p { margin: .28rem 0 0; color: #94a3b8; font-size: .9rem; line-height: 1.5; }
+.maintenance-page__item time { padding: .48rem .7rem; border: 1px solid rgba(253, 230, 138, .2); border-radius: 10px; color: #fde68a; font-size: .82rem; font-weight: 700; text-align: center; }
+@media (max-width: 620px) { .maintenance-page__heading { align-items: flex-start; flex-direction: column; } .maintenance-page__item { grid-template-columns: auto minmax(0, 1fr); } .maintenance-page__item time { grid-column: 2; justify-self: start; } }
