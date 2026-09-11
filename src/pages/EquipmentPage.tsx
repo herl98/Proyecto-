@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { useState, type FormEvent } from "react";
 import SectionPage from "../components/layout/SectionPage";
 
 type RegistroDano = {
@@ -69,7 +69,6 @@ function EquipmentPage() {
           <strong>{registros.length}</strong>
           <span>Registros de equipos dañados</span>
         </article>
-
         <article className="section-page__card">
           <strong>
             {registros.reduce(
@@ -93,7 +92,6 @@ function EquipmentPage() {
 
       <div style={{ marginTop: "2rem" }}>
         <h2>Equipos dañados registrados</h2>
-
         {registros.length === 0 ? (
           <p style={{ color: "#cbd5e1" }}>
             No existen equipos dañados registrados.
@@ -101,10 +99,7 @@ function EquipmentPage() {
         ) : (
           <div className="section-page__list" style={{ marginTop: "1rem" }}>
             {registros.map((registro) => (
-              <div
-                className="section-page__list-item"
-                key={registro.id}
-              >
+              <div className="section-page__list-item" key={registro.id}>
                 <span>
                   <strong>{registro.tipoEquipo}</strong>
                   <br />
@@ -114,7 +109,6 @@ function EquipmentPage() {
                   <br />
                   Cantidad dañada: {registro.cantidadDaniada}
                 </span>
-
                 <button
                   type="button"
                   className="section-page__button"
@@ -212,29 +206,18 @@ function EquipmentPage() {
               </div>
 
               <div style={{ display: "grid", gap: "0.5rem", marginTop: "1rem" }}>
-                <label htmlFor="cantidad-daniada">
-                  Cantidad de equipos dañados
-                </label>
+                <label htmlFor="cantidad-daniada">Cantidad de equipos dañados</label>
                 <input
                   id="cantidad-daniada"
                   type="number"
                   min="1"
                   value={cantidadDaniada}
-                  onChange={(event) =>
-                    setCantidadDaniada(Number(event.target.value))
-                  }
+                  onChange={(event) => setCantidadDaniada(Number(event.target.value))}
                   required
                 />
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  gap: "0.75rem",
-                  marginTop: "1.5rem",
-                }}
-              >
+              <div style={{ display: "flex", justifyContent: "flex-end", gap: "0.75rem", marginTop: "1.5rem" }}>
                 <button
                   type="button"
                   className="section-page__button"
@@ -242,11 +225,7 @@ function EquipmentPage() {
                 >
                   Cancelar
                 </button>
-
-                <button
-                  type="submit"
-                  className="section-page__button"
-                >
+                <button type="submit" className="section-page__button">
                   Registrar
                 </button>
               </div>
