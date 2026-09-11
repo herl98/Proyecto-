@@ -7,9 +7,8 @@
   flex-direction: column;
   padding: 1.5rem 1rem;
   border-right: 1px solid rgba(255, 255, 255, 0.13);
-  background: rgba(7, 21, 39, 0.92);
+  background: rgba(7, 21, 39, 0.96);
   box-shadow: 16px 0 42px rgba(2, 6, 23, 0.16);
-  backdrop-filter: blur(20px);
 }
 
 .app-sidebar__brand {
