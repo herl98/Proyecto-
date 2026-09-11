@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { useState, type FormEvent } from "react";
 import SectionPage from "../components/layout/SectionPage";
 
 type Revision = {
@@ -69,7 +69,6 @@ function MaintenancePage() {
           <strong>{revisiones.length}</strong>
           <span>Revisiones programadas</span>
         </article>
-
         <article className="section-page__card">
           <strong>4</strong>
           <span>Laboratorios disponibles</span>
@@ -88,7 +87,6 @@ function MaintenancePage() {
 
       <div style={{ marginTop: "2rem" }}>
         <h2>Revisiones programadas</h2>
-
         {revisiones.length === 0 ? (
           <p style={{ color: "#cbd5e1" }}>
             No existen revisiones preventivas programadas.
@@ -96,10 +94,7 @@ function MaintenancePage() {
         ) : (
           <div className="section-page__list" style={{ marginTop: "1rem" }}>
             {revisiones.map((revision) => (
-              <div
-                className="section-page__list-item"
-                key={revision.id}
-              >
+              <div className="section-page__list-item" key={revision.id}>
                 <span>
                   <strong>{revision.tipoEquipo}</strong>
                   <br />
@@ -109,7 +104,6 @@ function MaintenancePage() {
                   <br />
                   Responsable: {revision.responsable}
                 </span>
-
                 <button
                   type="button"
                   className="section-page__button"
@@ -156,9 +150,7 @@ function MaintenancePage() {
               boxShadow: "0 20px 50px rgba(0, 0, 0, 0.4)",
             }}
           >
-            <h2 id="titulo-modal-mantenimiento">
-              Programar revisión preventiva
-            </h2>
+            <h2 id="titulo-modal-mantenimiento">Programar revisión preventiva</h2>
             <p style={{ color: "#cbd5e1" }}>
               Registra una revisión para mantener los equipos en buenas condiciones.
             </p>
@@ -219,14 +211,7 @@ function MaintenancePage() {
                 />
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  gap: "0.75rem",
-                  marginTop: "1.5rem",
-                }}
-              >
+              <div style={{ display: "flex", justifyContent: "flex-end", gap: "0.75rem", marginTop: "1.5rem" }}>
                 <button
                   type="button"
                   className="section-page__button"
@@ -234,7 +219,6 @@ function MaintenancePage() {
                 >
                   Cancelar
                 </button>
-
                 <button type="submit" className="section-page__button">
                   Programar revisión
                 </button>
