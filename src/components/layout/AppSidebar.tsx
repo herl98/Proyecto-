@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./AppSidebar.css";
 
 const navigationItems = [
-  { to: "/", label: "Inicio", icon: "⌂", end: true },
+  { to: "/inicio", label: "Inicio", icon: "⌂", end: true },
   { to: "/equipos", label: "Equipos", icon: "⚗" },
   { to: "/incidencias", label: "Incidencias", icon: "!" },
   { to: "/mantenimiento", label: "Mantenimiento", icon: "◷" },
@@ -13,7 +13,7 @@ const navigationItems = [
 function AppSidebar() {
   return (
     <aside className="app-sidebar" aria-label="Navegación principal">
-      <NavLink className="app-sidebar__brand" to="/">
+      <NavLink className="app-sidebar__brand" to="/inicio">
         <span className="app-sidebar__brand-icon" aria-hidden="true">🔬</span>
         <span>Laboratorios <strong>DBS</strong></span>
       </NavLink>
