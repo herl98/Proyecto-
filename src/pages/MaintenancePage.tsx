@@ -79,15 +79,11 @@ function MaintenancePage() {
         </article>
       </div>
 
-      <div style={{ marginTop: "2rem" }}>
-        <button
-          type="button"
-          className="section-page__button"
-          onClick={() => setModalAbierto(true)}
-        >
-          Programar revisión preventiva
+      {!isSchoolAdmin && <div style={{ marginTop: "2rem" }}>
+        <button type="button" className="section-page__button" onClick={() => setModalAbierto(true)}>
+          {isSystemAdmin ? "Gestionar mantenimiento" : "Apoyar mantenimiento"}
         </button>
-      </div>
+      </div>}
 
       <div style={{ marginTop: "2rem" }}>
         <h2>Revisiones programadas</h2>
@@ -108,13 +104,7 @@ function MaintenancePage() {
                   <br />
                   Responsable: {revision.responsable}
                 </span>
-                <button
-                  type="button"
-                  className="section-page__button"
-                  onClick={() => eliminarRevision(revision.id)}
-                >
-                  Eliminar
-                </button>
+                {isSystemAdmin && <button type="button" className="section-page__button" onClick={() => eliminarRevision(revision.id)}>Eliminar</button>}
               </div>
             ))}
           </div>
