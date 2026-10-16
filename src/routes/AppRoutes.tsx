@@ -25,7 +25,6 @@ function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) {
 }
 
 const allRoles: UserRole[] = ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"];
-const managementRoles: UserRole[] = ["ADMIN_COLEGIO", "ADMIN_SISTEMA"];
 
 function AppRoutes() {
   return (
@@ -37,7 +36,7 @@ function AppRoutes() {
           <Route path="/inicio" element={<ProtectedRoute allowedRoles={allRoles}><HomePage /></ProtectedRoute>} />
           <Route path="/equipos" element={<ProtectedRoute allowedRoles={allRoles}><EquipmentPage /></ProtectedRoute>} />
           <Route path="/incidencias" element={<ProtectedRoute allowedRoles={allRoles}><IncidentsPage /></ProtectedRoute>} />
-          <Route path="/mantenimiento" element={<ProtectedRoute allowedRoles={managementRoles}><MaintenancePage /></ProtectedRoute>} />
+          <Route path="/mantenimiento" element={<ProtectedRoute allowedRoles={allRoles}><MaintenancePage /></ProtectedRoute>} />
           <Route path="/usuario" element={<ProtectedRoute allowedRoles={allRoles}><UserPage /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
