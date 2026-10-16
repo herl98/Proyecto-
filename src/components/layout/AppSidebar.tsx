@@ -7,7 +7,7 @@ const navigationItems: { to: string; label: string; icon: string; roles: UserRol
   { to: "/inicio", label: "Inicio", icon: "⌂", roles: ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"], end: true },
   { to: "/equipos", label: "Equipos", icon: "⚗", roles: ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"] },
   { to: "/incidencias", label: "Incidencias", icon: "!", roles: ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"] },
-  { to: "/mantenimiento", label: "Mantenimiento", icon: "◷", roles: ["ADMIN_COLEGIO", "ADMIN_SISTEMA"] },
+  { to: "/mantenimiento", label: "Mantenimiento", icon: "◷", roles: ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"] },
   { to: "/usuario", label: "Usuario", icon: "◉", roles: ["ADMIN_COLEGIO", "DOCENTE", "ADMIN_SISTEMA"] },
 ];
 
