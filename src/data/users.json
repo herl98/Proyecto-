@@ -1,16 +1,23 @@
 [
   {
     "id": "user-1",
-    "name": "Administrador",
-    "carnet": "1234567",
-    "password": "admin123",
-    "role": "ADMIN"
+    "name": "Administrador del colegio",
+    "carnet": "COLEGIO001",
+    "password": "demo-admin",
+    "role": "ADMIN_COLEGIO"
   },
   {
     "id": "user-2",
-    "name": "Usuario de prueba",
-    "carnet": "7654321",
-    "password": "usuario123",
-    "role": "USUARIO"
+    "name": "Docente responsable",
+    "carnet": "DOCENTE001",
+    "password": "demo-docente",
+    "role": "DOCENTE"
+  },
+  {
+    "id": "user-3",
+    "name": "Administrador del sistema",
+    "carnet": "SISTEMA001",
+    "password": "demo-sistema",
+    "role": "ADMIN_SISTEMA"
   }
 ]
