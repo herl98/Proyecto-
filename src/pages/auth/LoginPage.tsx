@@ -16,7 +16,7 @@ function LoginPage() {
 
 
   if (authRepository.isAuthenticated()) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/inicio" replace />;
   }
 
 
@@ -33,7 +33,7 @@ function LoginPage() {
     }
 
 
-    navigate("/", { replace: true });
+    navigate("/inicio", { replace: true });
   };
 
 
