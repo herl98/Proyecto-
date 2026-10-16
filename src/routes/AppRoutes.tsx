@@ -14,9 +14,19 @@ import UserPage from "../pages/UserPage";
 import { authRepository } from "../repositories/authRepository";
 import "./AppRoute.css";
 
-function AppRoutes() {
-  const authenticated = authRepository.isAuthenticated();
+type ProtectedRouteProps = {
+  children: React.ReactNode;
+};
 
+function ProtectedRoute({ children }: ProtectedRouteProps) {
+  if (!authRepository.isAuthenticated()) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return <>{children}</>;
+}
+
+function AppRoutes() {
   return (
     <BrowserRouter>
       <div className="app-routes">
@@ -25,23 +35,23 @@ function AppRoutes() {
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/inicio"
-            element={authenticated ? <HomePage /> : <Navigate to="/login" replace />}
+            element={<ProtectedRoute><HomePage /></ProtectedRoute>}
           />
           <Route
             path="/equipos"
-            element={authenticated ? <EquipmentPage /> : <Navigate to="/login" replace />}
+            element={<ProtectedRoute><EquipmentPage /></ProtectedRoute>}
           />
           <Route
             path="/incidencias"
-            element={authenticated ? <IncidentsPage /> : <Navigate to="/login" replace />}
+            element={<ProtectedRoute><IncidentsPage /></ProtectedRoute>}
           />
           <Route
             path="/mantenimiento"
-            element={authenticated ? <MaintenancePage /> : <Navigate to="/login" replace />}
+            element={<ProtectedRoute><MaintenancePage /></ProtectedRoute>}
           />
           <Route
             path="/usuario"
-            element={authenticated ? <UserPage /> : <Navigate to="/login" replace />}
+            element={<ProtectedRoute><UserPage /></ProtectedRoute>}
           />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
