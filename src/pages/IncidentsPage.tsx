@@ -13,6 +13,7 @@ function IncidentsPage() {
   const [editingIncidence, setEditingIncidence] = useState<Incidence | null>(null);
   const [isRegistering, setIsRegistering] = useState(false);
   const [form, setForm] = useState<IncidenceFormData>(emptyForm);
+  const isSystemAdmin = authRepository.getCurrentUser()?.role === "ADMIN_SISTEMA";
 
   const openRegisterModal = () => { setForm(emptyForm); setEditingIncidence(null); setIsRegistering(true); };
   const openEditModal = (incidence: Incidence) => {
@@ -41,7 +42,7 @@ function IncidentsPage() {
       {incidences.map((incidence) => <article className="incidents-page__item" key={incidence.id}>
         <div className="incidents-page__item-header"><h2>{incidence.incidenceType} · {incidence.equipmentType}</h2><span className="incidents-page__status">{incidence.status}</span></div>
         <p>{incidence.detail}</p>
-        <div className="incidents-page__item-footer"><span>{incidence.laboratory}{incidence.equipmentCode ? ` · Código: ${incidence.equipmentCode}` : ""}<br />Registrada el {new Intl.DateTimeFormat("es-BO", { dateStyle: "medium", timeStyle: "short" }).format(new Date(incidence.registeredAt))} por {incidence.registeredBy}</span><button className="incidents-page__edit" type="button" onClick={() => openEditModal(incidence)}>Editar</button></div>
+        <div className="incidents-page__item-footer"><span>{incidence.laboratory}{incidence.equipmentCode ? ` · Código: ${incidence.equipmentCode}` : ""}<br />Registrada el {new Intl.DateTimeFormat("es-BO", { dateStyle: "medium", timeStyle: "short" }).format(new Date(incidence.registeredAt))} por {incidence.registeredBy}</span>{isSystemAdmin && <button className="incidents-page__edit" type="button" onClick={() => openEditModal(incidence)}>Gestionar</button>}</div>
       </article>)}
     </div>}
     {isRegistering && <div className="incidents-modal" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) closeModal(); }}><section className="incidents-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="incidents-modal-title">
