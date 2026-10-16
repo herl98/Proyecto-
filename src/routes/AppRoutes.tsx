@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import {
   BrowserRouter,
   Navigate,
@@ -15,7 +17,7 @@ import { authRepository } from "../repositories/authRepository";
 import "./AppRoute.css";
 
 type ProtectedRouteProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 function ProtectedRoute({ children }: ProtectedRouteProps) {
