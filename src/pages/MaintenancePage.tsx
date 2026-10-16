@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import SectionPage from "../components/layout/SectionPage";
+import { authRepository } from "../repositories/authRepository";
 
 type Revision = {
   id: number;
@@ -27,6 +28,9 @@ const tiposEquipo = [
 ];
 
 function MaintenancePage() {
+  const currentRole = authRepository.getCurrentUser()?.role;
+  const isSchoolAdmin = currentRole === "ADMIN_COLEGIO";
+  const isSystemAdmin = currentRole === "ADMIN_SISTEMA";
   const [modalAbierto, setModalAbierto] = useState(false);
   const [revisiones, setRevisiones] = useState<Revision[]>([]);
 
