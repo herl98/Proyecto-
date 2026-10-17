@@ -6,6 +6,7 @@ const roleNames = {
   ADMIN_COLEGIO: "Administrador del colegio",
   DOCENTE: "Docente responsable",
   ADMIN_SISTEMA: "Administrador del sistema",
+  USUARIO: "Usuario nuevo",
 } as const;
 
 function UserPage() {
