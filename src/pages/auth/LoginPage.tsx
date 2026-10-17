@@ -15,11 +15,6 @@ function LoginPage() {
   const [error, setError] = useState("");
 
 
-  if (authRepository.isAuthenticated()) {
-    return <Navigate to="/inicio" replace />;
-  }
-
-
   const handleLogin = (credentials: LoginCredentials) => {
     setError("");
 
