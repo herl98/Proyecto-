@@ -2,22 +2,22 @@
   {
     "id": "user-1",
     "name": "Administrador del colegio",
-    "carnet": "COLEGIO001",
-    "password": "demo-admin",
+    "carnet": "1234567",
+    "password": "admin123",
     "role": "ADMIN_COLEGIO"
   },
   {
     "id": "user-2",
     "name": "Docente responsable",
-    "carnet": "DOCENTE001",
-    "password": "demo-docente",
+    "carnet": "7654321",
+    "password": "doncente123",
     "role": "DOCENTE"
   },
   {
     "id": "user-3",
     "name": "Administrador del sistema",
-    "carnet": "SISTEMA001",
-    "password": "demo-sistema",
+    "carnet": "12345675",
+    "password": "sistema123",
     "role": "ADMIN_SISTEMA"
   }
 ]
