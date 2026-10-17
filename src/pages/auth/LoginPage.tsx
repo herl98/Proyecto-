@@ -1,36 +1,28 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 import LoginForm from "../../components/auth/LoginForm";
 import "./LoginPage.css";
 import { authRepository } from "../../repositories/authRepository";
 
-
 import type { LoginCredentials } from "../../types/auth";
-
 
 function LoginPage() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-
   const handleLogin = (credentials: LoginCredentials) => {
     setError("");
 
-
     const user = authRepository.login(credentials);
-
 
     if (!user) {
       setError("El carnet o la contraseña son incorrectos.");
       return;
     }
 
-
     navigate("/inicio", { replace: true });
   };
-
 
   return (
     <main className="login-page">
@@ -72,6 +64,5 @@ function LoginPage() {
     </main>
   );
 }
-
 
 export default LoginPage;
