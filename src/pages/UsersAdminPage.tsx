@@ -7,6 +7,7 @@ const roleLabels: Record<UserRole, string> = {
   ADMIN_COLEGIO: "Administrador del colegio",
   DOCENTE: "Docente responsable",
   ADMIN_SISTEMA: "Administrador del sistema",
+  USUARIO: "Usuario nuevo",
 };
 
 function UsersAdminPage() {
@@ -14,7 +15,7 @@ function UsersAdminPage() {
   const [name, setName] = useState("");
   const [carnet, setCarnet] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState<UserRole>("DOCENTE");
+  const [role, setRole] = useState<UserRole>("USUARIO");
   const [message, setMessage] = useState("");
 
   const createUser = (event: FormEvent<HTMLFormElement>) => {
@@ -34,7 +35,8 @@ function UsersAdminPage() {
     setName("");
     setCarnet("");
     setPassword("");
-    setMessage("Usuario agregado correctamente a esta demostración.");
+    setRole("USUARIO");
+    setMessage("Usuario nuevo creado correctamente.");
   };
 
   const deleteUser = (id: string) => {
@@ -49,12 +51,12 @@ function UsersAdminPage() {
   };
 
   return (
-    <SectionPage eyebrow="Administración" title="Gestionar usuarios" description="Registra cuentas de acceso y asigna el rol que corresponde a cada persona.">
+    <SectionPage eyebrow="Administración" title="Gestionar usuarios" description="Crea cuentas de usuario nuevas sin asignarles los permisos de administrador o docente.">
       <form onSubmit={createUser} style={{ display: "grid", gap: "0.9rem", maxWidth: "620px", marginBottom: "2rem" }}>
         <label>Nombre completo<input value={name} onChange={(event) => setName(event.target.value)} required /></label>
-        <label>Carnet o usuario<input value={carnet} onChange={(event) => setCarnet(event.target.value)} required /></label>
+        <label>Carnet o usuario<input value={carnet} onChange={(event) => setCarnet(event.target.value.trimStart())} required /></label>
         <label>Contraseña inicial<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength={6} /></label>
-        <label>Rol<select value={role} onChange={(event) => setRole(event.target.value as UserRole)}><option value="ADMIN_COLEGIO">Administrador del colegio</option><option value="DOCENTE">Docente responsable</option><option value="ADMIN_SISTEMA">Administrador del sistema</option></select></label>
+        <label>Tipo de cuenta<select value={role} onChange={(event) => setRole(event.target.value as UserRole)}><option value="USUARIO">Usuario nuevo (acceso básico)</option><option value="DOCENTE">Docente responsable</option><option value="ADMIN_COLEGIO">Administrador del colegio</option><option value="ADMIN_SISTEMA">Administrador del sistema</option></select></label>
         <button className="section-page__button" type="submit">Crear usuario</button>
         {message && <p role="status">{message}</p>}
       </form>
