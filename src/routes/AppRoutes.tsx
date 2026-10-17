@@ -24,7 +24,7 @@ function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) {
 const schoolAdmin: UserRole[] = ["ADMIN_COLEGIO"];
 const teacher: UserRole[] = ["DOCENTE"];
 const systemAdmin: UserRole[] = ["ADMIN_SISTEMA"];
-const allRoles: UserRole[] = [...schoolAdmin, ...teacher, ...systemAdmin];
+const allRoles: UserRole[] = [...schoolAdmin, ...teacher, ...systemAdmin, "USUARIO"];
 
 function AppRoutes() {
   return (
